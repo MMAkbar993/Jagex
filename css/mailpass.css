@@ -1,0 +1,1027 @@
+/* width */
+::-webkit-scrollbar {
+  /*width: 10px; /* Changed from 0px to 10px for visibility */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0px 0px 100px 10px rgb(44 44 44); 
+  border-radius: 10px;
+}
+/* Target autofill for the specific input fields */
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus,
+.input-field:-webkit-autofill:active {
+    /* Use box-shadow to override the default autofill background */
+    -webkit-box-shadow: 0 0 0 1000px rgb(15, 23, 34) inset !important;
+    
+    /* Ensure text is white */
+    -webkit-text-fill-color: #fff !important;
+
+    /* Makes the blinking cursor white */
+    caret-color: #fff !important;
+}
+
+/* Highly recommended: Also set it for the standard input state */
+.input-field {
+    caret-color: #fff;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(159 159 159); /* Changed from red to a more standard color */
+  border-radius: 10px;
+}
+  /* Add these styles to align the edit-icon with the eye-icon */
+        .input-container {
+            position: relative;
+        }
+        
+        .edit-icon {
+            position: absolute;
+            right: 19px;
+            top: 60%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+        .eye-icon {
+            position: absolute;
+            right: 19px;
+            top: 60%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+		
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Main wrapper for sticky footer */
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Content area that grows to fill available space */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    
+    padding: 0; /* Removed padding to eliminate white space */
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Mobile-specific footer - only visible on mobile */
+.mobile-footer {
+    display: none;
+    background-color: rgb(15, 23, 34);
+    border-top: 0.125rem solid rgb(33, 39, 54);
+    padding: 3rem 1rem;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Mobile footer image */
+.mobile-footer-image {
+    max-width: 50%;
+    margin-bottom: 2rem;
+}
+
+/* Mobile footer links container */
+.mobile-footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* Mobile footer link group */
+.mobile-footer-link-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.3rem;
+    width: 100%;
+}
+
+/* Mobile footer link */
+.mobile-footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-footer-links a:hover {
+    color: #39acff;
+}
+
+/* Mobile footer copyright */
+.mobile-footer-copyright {
+    font-size: 0.99rem;
+    color: #aaa;
+    margin-top: 1rem;
+}
+
+/* Desktop footer styles */
+.desktop-footer {
+    display: flex;
+    height: 270px;
+    width: 100%;
+    background-color: rgb(15, 23, 34);
+    border-top: 0.125rem solid rgb(33, 39, 54);
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.footer-left {
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-left img {
+    max-width: 40%;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Prevent link text from wrapping */
+}
+
+.footer-links a:hover {
+    color: #39acff;
+}
+
+.footer-right {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.footer-copyright {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Loading state for submit button */
+.cont_btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.cont_btn.loading {
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.cont_btn.loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments for mobile footer */
+@media (max-width: 570px) {
+    .mobile-footer {
+        display: block;
+    }
+    
+    /* Hide desktop footer on mobile */
+    .desktop-footer {
+        display: none;
+    }
+    
+    /* Mobile footer spacing adjustments */
+    .mobile-footer-image {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .mobile-footer-links {
+        gap: 20px;
+    }
+    
+    .mobile-footer-link-group {
+        margin-bottom: 10px;
+    }
+    
+    .mobile-footer-copyright {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet adjustments - MODIFIED SECTION */
+@media(min-width: 571px) and (max-width: 1200px) {
+    /* Modified footer layout for tablets */
+    .desktop-footer {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 0;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-left {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .footer-left img {
+        max-width: 200px;
+        margin: 20px 0; /* Space before and after image */
+    }
+    
+    .footer-links {
+        justify-content: center;
+        max-width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-link-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    
+    .footer-right {
+        width: 100%;
+        padding: 10px 20px 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-copyright {
+        text-align: center;
+        margin: 20px 0 0;
+    }
+}
+
+/* Desktop adjustments with spacing for footer elements - MODIFIED SECTION */
+@media(min-width: 1201px) and (max-width: 1920px) {
+    .footer-left img {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 20px;
+    }
+    
+    .footer-link-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-copyright {
+       margin-top: 213px;
+        margin-bottom: 6px;
+        margin-right: -453px;
+    }
+}
+
+.img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.img img {
+    max-width: 70%;
+    max-height: 55%;
+    border-radius: 1%;
+    cursor: none;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Changed from flex to none to hide by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    background-image: url('https://i.ibb.co/RGcNZ0LZ/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Mobile preloader - different from desktop */
+.preloader.mobile {
+    background-color: rgb(15, 23, 34);
+    background-image: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    display: none; /* Hide preloader on mobile by default */
+}
+
+/* New preloader container */
+.preloader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 15px;
+    
+    padding: 20px;
+}
+
+/* Mobile preloader container - simpler */
+.preloader.mobile .preloader-container {
+    padding: 0;
+}
+
+/* Black container for progress with icons inside */
+.progress-container {
+    width: 480px;
+    height: 160px; /* Increased height to accommodate both icons and progress */
+    background-color:  rgb(15, 23, 34);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 15px 20px;
+   
+}
+
+/* Mobile progress container - just the spinner */
+.preloader.mobile .progress-container {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Logo container at the top */
+.preloader-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; /* Space between logo and progress */
+}
+
+/* Hide logo on mobile */
+.preloader.mobile .preloader-icons {
+    display: none;
+}
+
+.preloader-icon {
+    width: 165px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Circular progress container below icons */
+.circular-progress {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Make mobile spinner larger and centered */
+.preloader.mobile .circular-progress {
+    width: 60px;
+    height: 60px;
+    box-shadow: none;
+}
+
+.circular-progress svg {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform: rotate(-90deg);
+}
+
+/* Make mobile SVG larger */
+.preloader.mobile .circular-progress svg {
+    width: 60px;
+    height: 60px;
+}
+
+.circular-progress svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 5;
+    stroke: #fff;
+    stroke-linecap: round;
+}
+
+/* Make mobile circle stroke wider */
+.preloader.mobile .circular-progress svg circle {
+    stroke-width: 6;
+}
+
+.circular-progress svg circle:nth-child(2) {
+    stroke: #0066cc;
+    stroke-dasharray: 141.372;
+    stroke-dashoffset: 141.372;
+    animation: circularProgress 1s linear infinite; /* 1 second animation */
+}
+
+/* Update mobile circle animation */
+.preloader.mobile .circular-progress svg circle:nth-child(2) {
+    stroke-dasharray: 169.646; /* Updated for larger circle */
+    stroke-dashoffset: 169.646;
+}
+
+@keyframes circularProgress {
+    0% {
+        stroke-dashoffset: 141.372;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Update mobile animation */
+@keyframes circularProgress {
+    0% {
+        stroke-dashoffset: 169.646;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive adjustments for preloader */
+@media (max-width: 768px) {
+    .progress-container {
+        width: 250px;
+        height: 100px;
+    }
+    
+    .preloader-logo {
+        width: 60px;
+        height: 30px;
+    }
+    
+    .circular-progress {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .circular-progress svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-container {
+        width: 200px;
+        height: 80px;
+    }
+    
+    .preloader-logo {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .circular-progress {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .circular-progress svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.remove {
+    display: none;
+}
+
+.container {
+    padding: 0 !important;
+    padding-top: 16px; /* Push container up by 80px */
+   /* Additional upward movement */
+}
+
+/* Desktop-only background image */
+@media (min-width: 571px) {
+    .container {
+        background-image: url('https://i.ibb.co/RGcNZ0LZ/bg1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.css-sncgum {
+    margin: 0 !important;
+    margin-top: 4px !important;
+}
+
+.box {
+    width: 422px !important;
+         height: 560px;
+    max-width: 100%;
+        margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+@media(max-width: 1200px) {
+    /* .box{
+        height: 400px!important;
+    } */
+}
+
+@media(max-width: 570px) {
+    body {
+        background: rgb(15, 23, 34);
+    }
+
+    .box {
+        box-shadow: none;
+        width: 100% !important; /* Changed from default to 100% */
+        max-width: none; /* Removed max-width constraint */
+    }
+    
+    .container {
+        margin-top: -40px; /* Reduced negative margin for smaller screens */
+        transform: translateY(-10px);
+    }
+}
+
+@media only screen and (max-height: 1200px) and (min-height: 1100px) {
+    body, html {
+        height: 1201px;
+    }
+}
+@media only screen and (max-height: 1099px) and (min-height: 999px) {
+    body, html {
+        height: 1100px;
+    }
+}
+@media only screen and (max-height: 998px) and (min-height: 800px) {
+    body, html {
+        height: 1000px;
+    }
+}
+@media only screen and (max-height: 799px) and (min-height: 701px) {
+    body, html {
+        height: 800px;
+    }
+}
+@media only screen and (max-height: 700px) {
+    body, html {
+        height: auto;
+    }
+}
+
+/* Input field styles */
+.input-field{
+    width: calc(100% - 35px);
+    border: 1px dashed #39acff !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f1722;
+  display: block; /* Changed from flex to block */
+  height: auto;
+  margin: 0;
+  min-height: 127vh;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 27px;
+  height: 50px; /* Explicit height for input containers */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  height: 50px; /* Explicit height for all inputs */
+  box-sizing: border-box; /* Ensures padding doesn't affect total height */
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10; /* Ensure icon is above input */
+}
+
+label {
+  position: absolute;
+  top: 19px; /* Adjusted for new height */
+  left: 10px;
+  transform: translateY(-60%);
+  pointer-events: none;
+  transition: 0.3s;
+  color: #686868a8;
+  font-size: 0.875rem;
+}
+
+input:focus + label {
+  /* color: #3498db; */
+}
+
+/* Added dashed blue border for input fields */
+.input-field {
+    border: 1px dashed #39acff !important;
+    background-color: transparent;
+    color: #fff;
+    height: 50px; /* Explicit height for input-field class */
+    padding: 10px 40px 10px 10px; /* Adjusted padding to make room for icon */
+    box-sizing: border-box;
+    line-height: 30px; /* For text vertical alignment */
+}
+
+.email_input {
+    border: 1px dashed #39acff !important;
+    background-color: transparent;
+    color: #fff;
+    height: 50px; /* Explicit height for email_input class */
+    box-sizing: border-box;
+}
+
+/* Specific styling for password input */
+#user_input {
+    height: 55px; /* Explicit height for password input */
+    padding: 10px 40px 0px 20px; /* Adjusted padding for eye icon */
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+/* Password input container with icon inside */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.password-input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #94a2ac5c   !important;
+    background-color: transparent;
+    color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+}
+
+/* New wrapper for password container with dashed white border */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    margin-bottom: 20px;
+}
+
+/* Dashed border that appears on focus */
+.password-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -4px;
+    right: -4px;
+    bottom: -2px;
+    border: 1px dashed #fff; /* Changed from transparent to white to show by default */
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+    pointer-events: none;
+}
+
+/* Hide dashed white border when password input loses focus */
+.password-wrapper.blurred::before {
+    border-color: transparent;
+}
+
+/* Adjust eye icon positioning */
+.eye-icon {
+    top: 20px; /* Adjusted for new height */
+    transform: translateY(0);
+    right: 25px;
+}
+
+/* Adjust edit icon positioning */
+.edit-icon {
+    top: 20px; /* Adjusted for new height */
+    transform: translateY(0);
+    right: 25px;
+    cursor: pointer;
+}
+
+/* Email display field styling */
+.input-container .input-field {
+    border: 1px solid #94a2ac5c  !important; 
+    cursor: not-allowed; 
+    background-color: transparent; 
+    color: #999; 
+    padding: 23px 40px 10px 20px; 
+    width: 100%; 
+    box-sizing: border-box; 
+    height: 60px; 
+    line-height: 30px;
+}
+
+/* Email label styling */
+.input-container label {
+    position: absolute; 
+    top: 15px; 
+    left: 20px; 
+    transform: translateY(-60%); 
+    pointer-events: none; 
+    transition: 0.3s; 
+    color: #505050; 
+    font-size: 0.875rem;
+}
+
+/* Hide elements with display none style */
+.or_text {
+    display: none !important;
+}
+
+.add {
+    display: none !important;
+}
+
+/* HR element styling */
+hr.css-mek630.efk7upz36 {
+    margin-top: 16px; 
+    margin-bottom: 40px;
+}
+
+/* Logo image styling */
+p img {
+    border: 0;
+}
+
+/* Input container display styling */
+#input-container {
+    display: none;
+}
+
+#input-container2 {
+    display: block;
+}
+
+/* Button styling */
+#login_email_btn {
+    display: none;
+}
+
+/* Additional responsive styles */
+@media only screen and (max-height: 1200px) and (min-height: 1100px) {
+    body,html {
+        height: 1201px;
+    }
+}
+
+@media only screen and (max-height: 1099px) and (min-height: 999px) {
+    body,html {
+        height: 1100px;
+    }
+}
+
+@media only screen and (max-height: 998px) and (min-height: 900px) {
+    body,html {
+        height: auto;
+    }
+}
+
+@media only screen and (max-height: 901px) and (min-height: 800px) {
+    body,html {
+        height: 900px;
+    }
+}
+
+@media only screen and (max-height: 901px) and (min-height: 800px) {
+    body,html {
+        height: auto;
+    }
+}
+
+@media only screen and (max-height: 799px) and (min-height: 701px) {
+    body,html {
+        height: auto;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    body,html {
+        height: 730px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    body,html {
+        height: auto;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    body,html {
+        height: auto;
+    }
+}
+
+/* Mobile-specific adjustments for login form */
+@media (max-width: 570px) {
+    /* Move the form up on mobile devices */
+    .content-wrapper {
+        align-items: flex-start;
+        padding-top: 0; /* Removed padding */
+        padding-bottom: 0; /* Removed padding */
+    }
+    
+    .container {
+        margin-top: -20px;
+        transform: translateY(0);
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .box {
+        width: 100% !important; /* Changed from max-width: 400px to 100% */
+        max-width: none; /* Removed max-width constraint */
+        margin: 0 auto;
+    }
+    
+    /* Adjust form elements for mobile */
+    .top_text {
+        padding: 0 10px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .css-sncgum {
+        font-size: 2rem !important;
+    }
+    
+    .input-container {
+        margin-bottom: 15px;
+    }
+    
+    .cont_btn {
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    /* Adjust preloader for mobile */
+    .preloader {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .progress-container {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Additional adjustments for smaller mobile devices */
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding-top: 0; /* Removed padding */
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .box {
+        padding: 15px;
+    }
+    
+    .css-sncgum {
+        font-size: 2rem !important;
+    }
+    
+    .cont_btn {
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .input-field, .password-input {
+        font-size: 14px;
+    }
+    
+    label {
+        font-size: 12px;
+    }
+}
