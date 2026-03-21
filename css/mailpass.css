@@ -1,13 +1,14 @@
 /* width */
 ::-webkit-scrollbar {
-  /*width: 10px; /* Changed from 0px to 10px for visibility */
+    /*width: 10px; /* Changed from 0px to 10px for visibility */
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0px 0px 100px 10px rgb(44 44 44); 
-  border-radius: 10px;
+    box-shadow: inset 0px 0px 100px 10px rgb(44 44 44);
+    border-radius: 10px;
 }
+
 /* Target autofill for the specific input fields */
 .input-field:-webkit-autofill,
 .input-field:-webkit-autofill:hover,
@@ -15,7 +16,7 @@
 .input-field:-webkit-autofill:active {
     /* Use box-shadow to override the default autofill background */
     -webkit-box-shadow: 0 0 0 1000px rgb(15, 23, 34) inset !important;
-    
+
     /* Ensure text is white */
     -webkit-text-fill-color: #fff !important;
 
@@ -27,38 +28,42 @@
 .input-field {
     caret-color: #fff;
 }
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(159 159 159); /* Changed from red to a more standard color */
-  border-radius: 10px;
-}
-  /* Add these styles to align the edit-icon with the eye-icon */
-        .input-container {
-            position: relative;
-        }
-        
-        .edit-icon {
-            position: absolute;
-            right: 19px;
-            top: 60%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-        
-        .eye-icon {
-            position: absolute;
-            right: 19px;
-            top: 60%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-		
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
+    background: rgb(159 159 159);
+    /* Changed from red to a more standard color */
+    border-radius: 10px;
 }
 
-body, html {
+/* Add these styles to align the edit-icon with the eye-icon */
+.input-container {
+    position: relative;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 19px;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 19px;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+body,
+html {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -66,7 +71,8 @@ body, html {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar */
 }
 
 /* Main wrapper for sticky footer */
@@ -75,7 +81,8 @@ body, html {
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar */
 }
 
 /* Content area that grows to fill available space */
@@ -83,10 +90,12 @@ body, html {
     flex: 1;
     display: flex;
     justify-content: center;
-    
-    padding: 0; /* Removed padding to eliminate white space */
+
+    padding: 0;
+    /* Removed padding to eliminate white space */
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar */
 }
 
 /* Mobile-specific footer - only visible on mobile */
@@ -99,7 +108,8 @@ body, html {
     color: #fff;
     text-align: center;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar */
 }
 
 /* Mobile footer image */
@@ -148,64 +158,79 @@ body, html {
 
 /* Desktop footer styles */
 .desktop-footer {
-    display: flex;
-    height: 270px;
-    width: 100%;
+    display: block;
     background-color: rgb(15, 23, 34);
     border-top: 0.125rem solid rgb(33, 39, 54);
     color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    padding: 2.5rem 2.5rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.footer-left {
-    width: 30%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.footer-logo-area {
+    margin-bottom: 1.5rem;
 }
 
-.footer-left img {
-    max-width: 40%;
-    margin-bottom: 20px;
+.footer-logo-area img {
+    max-width: 130px;
+    display: block;
 }
 
 .footer-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: column;
+    gap: 0.65rem;
 }
 
-.footer-links a {
+.footer-link-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.footer-link-group a {
     color: #fff;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
-    white-space: nowrap; /* Prevent link text from wrapping */
+    white-space: nowrap;
 }
 
-.footer-links a:hover {
+.footer-link-group a:hover {
     color: #39acff;
 }
 
-.footer-right {
-    width: 70%;
+.footer-bottom-row {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding-right: 20px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
 }
 
 .footer-copyright {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
-    text-align: center;
+    text-align: right;
+    white-space: nowrap;
 }
 
 /* Loading state for submit button */
 .cont_btn {
     position: relative;
     overflow: hidden;
+    transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+.cont_btn:hover:not(:disabled) {
+    background: rgb(8, 107, 183);
+    box-shadow: 0 4px 14px rgba(12, 138, 230, 0.45);
 }
 
 .cont_btn.loading {
@@ -230,8 +255,13 @@ body, html {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Responsive adjustments for mobile footer */
@@ -239,118 +269,52 @@ body, html {
     .mobile-footer {
         display: block;
     }
-    
+
     /* Hide desktop footer on mobile */
     .desktop-footer {
         display: none;
     }
-    
+
     /* Mobile footer spacing adjustments */
     .mobile-footer-image {
         margin-top: 20px;
         margin-bottom: 30px;
     }
-    
+
     .mobile-footer-links {
         gap: 20px;
     }
-    
+
     .mobile-footer-link-group {
         margin-bottom: 10px;
     }
-    
+
     .mobile-footer-copyright {
         margin-top: 20px;
         margin-bottom: 20px;
     }
 }
 
-/* Tablet adjustments - MODIFIED SECTION */
+/* Tablet adjustments */
 @media(min-width: 571px) and (max-width: 1200px) {
-    /* Modified footer layout for tablets */
     .desktop-footer {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .footer-bottom-row {
         flex-direction: column;
-        height: auto;
-        padding: 30px 0;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
     }
-    
-    .footer-left {
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    .footer-left img {
-        max-width: 200px;
-        margin: 20px 0; /* Space before and after image */
-    }
-    
-    .footer-links {
-        justify-content: center;
-        max-width: 100%;
-        flex-wrap: wrap;
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-link-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 10px;
-    }
-    
-    .footer-links a {
-        font-size: 12px;
-        padding: 0 5px;
-    }
-    
-    .footer-right {
-        width: 100%;
-        padding: 10px 20px 20px;
-        justify-content: center;
-        text-align: center;
-    }
-    
+
     .footer-copyright {
-        text-align: center;
-        margin: 20px 0 0;
+        text-align: left;
+        white-space: normal;
     }
 }
 
-/* Desktop adjustments with spacing for footer elements - MODIFIED SECTION */
+/* Desktop adjustments */
 @media(min-width: 1201px) and (max-width: 1920px) {
-    .footer-left img {
-        margin-top: 20px;
-        margin-bottom: 30px;
-    }
-    
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        gap: 20px;
-    }
-    
-    .footer-link-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .footer-copyright {
-       margin-top: 213px;
-        margin-bottom: 6px;
-        margin-right: -453px;
-    }
+    /* standard sizing — no overrides needed */
 }
 
 .img {
@@ -379,7 +343,8 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    display: none; /* Changed from flex to none to hide by default */
+    display: none;
+    /* Changed from flex to none to hide by default */
     align-items: center;
     justify-content: center;
     z-index: 9999;
@@ -396,7 +361,8 @@ body, html {
     justify-content: center;
     align-items: flex-start;
     padding-top: 50px;
-    display: none; /* Hide preloader on mobile by default */
+    display: none;
+    /* Hide preloader on mobile by default */
 }
 
 /* New preloader container */
@@ -405,9 +371,9 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
     border-radius: 15px;
-    
+
     padding: 20px;
 }
 
@@ -419,8 +385,9 @@ body, html {
 /* Black container for progress with icons inside */
 .progress-container {
     width: 480px;
-    height: 160px; /* Increased height to accommodate both icons and progress */
-    background-color:  rgb(15, 23, 34);
+    height: 160px;
+    /* Increased height to accommodate both icons and progress */
+    background-color: rgb(15, 23, 34);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -429,7 +396,7 @@ body, html {
     position: relative;
     overflow: hidden;
     padding: 15px 20px;
-   
+
 }
 
 /* Mobile progress container - just the spinner */
@@ -444,7 +411,8 @@ body, html {
 .preloader-icons {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px; /* Space between logo and progress */
+    margin-bottom: 15px;
+    /* Space between logo and progress */
 }
 
 /* Hide logo on mobile */
@@ -515,12 +483,14 @@ body, html {
     stroke: #0066cc;
     stroke-dasharray: 141.372;
     stroke-dashoffset: 141.372;
-    animation: circularProgress 1s linear infinite; /* 1 second animation */
+    animation: circularProgress 1s linear infinite;
+    /* 1 second animation */
 }
 
 /* Update mobile circle animation */
 .preloader.mobile .circular-progress svg circle:nth-child(2) {
-    stroke-dasharray: 169.646; /* Updated for larger circle */
+    stroke-dasharray: 169.646;
+    /* Updated for larger circle */
     stroke-dashoffset: 169.646;
 }
 
@@ -528,6 +498,7 @@ body, html {
     0% {
         stroke-dashoffset: 141.372;
     }
+
     100% {
         stroke-dashoffset: 0;
     }
@@ -538,6 +509,7 @@ body, html {
     0% {
         stroke-dashoffset: 169.646;
     }
+
     100% {
         stroke-dashoffset: 0;
     }
@@ -559,17 +531,17 @@ body, html {
         width: 250px;
         height: 100px;
     }
-    
+
     .preloader-logo {
         width: 60px;
         height: 30px;
     }
-    
+
     .circular-progress {
         width: 40px;
         height: 40px;
     }
-    
+
     .circular-progress svg {
         width: 40px;
         height: 40px;
@@ -581,17 +553,17 @@ body, html {
         width: 200px;
         height: 80px;
     }
-    
+
     .preloader-logo {
         width: 50px;
         height: 25px;
     }
-    
+
     .circular-progress {
         width: 30px;
         height: 30px;
     }
-    
+
     .circular-progress svg {
         width: 30px;
         height: 30px;
@@ -604,8 +576,9 @@ body, html {
 
 .container {
     padding: 0 !important;
-    padding-top: 16px; /* Push container up by 80px */
-   /* Additional upward movement */
+    padding-top: 16px;
+    /* Push container up by 80px */
+    /* Additional upward movement */
 }
 
 /* Desktop-only background image */
@@ -625,11 +598,12 @@ body, html {
 
 .box {
     width: 422px !important;
-         height: 560px;
+    height: 560px;
     max-width: 100%;
-        margin-top: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar */
 }
 
 @media(max-width: 1200px) {
@@ -645,96 +619,119 @@ body, html {
 
     .box {
         box-shadow: none;
-        width: 100% !important; /* Changed from default to 100% */
-        max-width: none; /* Removed max-width constraint */
+        width: 100% !important;
+        /* Changed from default to 100% */
+        max-width: none;
+        /* Removed max-width constraint */
     }
-    
+
     .container {
-        margin-top: -40px; /* Reduced negative margin for smaller screens */
+        margin-top: -40px;
+        /* Reduced negative margin for smaller screens */
         transform: translateY(-10px);
     }
 }
 
 @media only screen and (max-height: 1200px) and (min-height: 1100px) {
-    body, html {
+
+    body,
+    html {
         height: 1201px;
     }
 }
+
 @media only screen and (max-height: 1099px) and (min-height: 999px) {
-    body, html {
+
+    body,
+    html {
         height: 1100px;
     }
 }
+
 @media only screen and (max-height: 998px) and (min-height: 800px) {
-    body, html {
+
+    body,
+    html {
         height: 1000px;
     }
 }
+
 @media only screen and (max-height: 799px) and (min-height: 701px) {
-    body, html {
+
+    body,
+    html {
         height: 800px;
     }
 }
+
 @media only screen and (max-height: 700px) {
-    body, html {
+
+    body,
+    html {
         height: auto;
     }
 }
 
 /* Input field styles */
-.input-field{
+.input-field {
     width: calc(100% - 35px);
     border: 1px dashed #39acff !important;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f1722;
-  display: block; /* Changed from flex to block */
-  height: auto;
-  margin: 0;
-  min-height: 127vh;
+    font-family: Arial, sans-serif;
+    background-color: #0f1722;
+    display: block;
+    /* Changed from flex to block */
+    height: auto;
+    margin: 0;
+    min-height: 127vh;
 }
 
 .input-container {
-  position: relative;
-  margin-bottom: 27px;
-  height: 50px; /* Explicit height for input containers */
+    position: relative;
+    margin-bottom: 27px;
+    height: 50px;
+    /* Explicit height for input containers */
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  font-size: 16px;
-  height: 50px; /* Explicit height for all inputs */
-  box-sizing: border-box; /* Ensures padding doesn't affect total height */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    height: 50px;
+    /* Explicit height for all inputs */
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect total height */
 }
 
 .eye-icon {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 10; /* Ensure icon is above input */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    /* Ensure icon is above input */
 }
 
 label {
-  position: absolute;
-  top: 19px; /* Adjusted for new height */
-  left: 10px;
-  transform: translateY(-60%);
-  pointer-events: none;
-  transition: 0.3s;
-  color: #686868a8;
-  font-size: 0.875rem;
+    position: absolute;
+    top: 19px;
+    /* Adjusted for new height */
+    left: 10px;
+    transform: translateY(-60%);
+    pointer-events: none;
+    transition: 0.3s;
+    color: #686868a8;
+    font-size: 0.875rem;
 }
 
-input:focus + label {
-  /* color: #3498db; */
+input:focus+label {
+    /* color: #3498db; */
 }
 
 /* Added dashed blue border for input fields */
@@ -742,24 +739,30 @@ input:focus + label {
     border: 1px dashed #39acff !important;
     background-color: transparent;
     color: #fff;
-    height: 50px; /* Explicit height for input-field class */
-    padding: 10px 40px 10px 10px; /* Adjusted padding to make room for icon */
+    height: 50px;
+    /* Explicit height for input-field class */
+    padding: 10px 40px 10px 10px;
+    /* Adjusted padding to make room for icon */
     box-sizing: border-box;
-    line-height: 30px; /* For text vertical alignment */
+    line-height: 30px;
+    /* For text vertical alignment */
 }
 
 .email_input {
     border: 1px dashed #39acff !important;
     background-color: transparent;
     color: #fff;
-    height: 50px; /* Explicit height for email_input class */
+    height: 50px;
+    /* Explicit height for email_input class */
     box-sizing: border-box;
 }
 
 /* Specific styling for password input */
 #user_input {
-    height: 55px; /* Explicit height for password input */
-    padding: 10px 40px 0px 20px; /* Adjusted padding for eye icon */
+    height: 55px;
+    /* Explicit height for password input */
+    padding: 10px 40px 0px 20px;
+    /* Adjusted padding for eye icon */
     box-sizing: border-box;
     border-radius: 12px;
 }
@@ -777,7 +780,7 @@ input:focus + label {
     width: 100%;
     height: 100%;
     padding: 10px 40px 10px 10px;
-    border: 1px solid #94a2ac5c   !important;
+    border: 1px solid #94a2ac5c !important;
     background-color: transparent;
     color: #fff;
     box-sizing: border-box;
@@ -801,7 +804,8 @@ input:focus + label {
     left: -4px;
     right: -4px;
     bottom: -2px;
-    border: 1px dashed #fff; /* Changed from transparent to white to show by default */
+    border: 1px dashed #fff;
+    /* Changed from transparent to white to show by default */
     border-radius: 10px;
     transition: border-color 0.3s ease;
     pointer-events: none;
@@ -814,14 +818,16 @@ input:focus + label {
 
 /* Adjust eye icon positioning */
 .eye-icon {
-    top: 20px; /* Adjusted for new height */
+    top: 20px;
+    /* Adjusted for new height */
     transform: translateY(0);
     right: 25px;
 }
 
 /* Adjust edit icon positioning */
 .edit-icon {
-    top: 20px; /* Adjusted for new height */
+    top: 20px;
+    /* Adjusted for new height */
     transform: translateY(0);
     right: 25px;
     cursor: pointer;
@@ -829,26 +835,26 @@ input:focus + label {
 
 /* Email display field styling */
 .input-container .input-field {
-    border: 1px solid #94a2ac5c  !important; 
-    cursor: not-allowed; 
-    background-color: transparent; 
-    color: #999; 
-    padding: 23px 40px 10px 20px; 
-    width: 100%; 
-    box-sizing: border-box; 
-    height: 60px; 
+    border: 1px solid #94a2ac5c !important;
+    cursor: not-allowed;
+    background-color: transparent;
+    color: #999;
+    padding: 23px 40px 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 60px;
     line-height: 30px;
 }
 
 /* Email label styling */
 .input-container label {
-    position: absolute; 
-    top: 15px; 
-    left: 20px; 
-    transform: translateY(-60%); 
-    pointer-events: none; 
-    transition: 0.3s; 
-    color: #505050; 
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transform: translateY(-60%);
+    pointer-events: none;
+    transition: 0.3s;
+    color: #505050;
     font-size: 0.875rem;
 }
 
@@ -863,7 +869,7 @@ input:focus + label {
 
 /* HR element styling */
 hr.css-mek630.efk7upz36 {
-    margin-top: 16px; 
+    margin-top: 16px;
     margin-bottom: 40px;
 }
 
@@ -888,106 +894,129 @@ p img {
 
 /* Additional responsive styles */
 @media only screen and (max-height: 1200px) and (min-height: 1100px) {
-    body,html {
+
+    body,
+    html {
         height: 1201px;
     }
 }
 
 @media only screen and (max-height: 1099px) and (min-height: 999px) {
-    body,html {
+
+    body,
+    html {
         height: 1100px;
     }
 }
 
 @media only screen and (max-height: 998px) and (min-height: 900px) {
-    body,html {
+
+    body,
+    html {
         height: auto;
     }
 }
 
 @media only screen and (max-height: 901px) and (min-height: 800px) {
-    body,html {
+
+    body,
+    html {
         height: 900px;
     }
 }
 
 @media only screen and (max-height: 901px) and (min-height: 800px) {
-    body,html {
+
+    body,
+    html {
         height: auto;
     }
 }
 
 @media only screen and (max-height: 799px) and (min-height: 701px) {
-    body,html {
+
+    body,
+    html {
         height: auto;
     }
 }
 
 @media only screen and (max-height: 700px) {
-    body,html {
+
+    body,
+    html {
         height: 730px;
     }
 }
 
 @media only screen and (max-height: 700px) {
-    body,html {
+
+    body,
+    html {
         height: auto;
     }
 }
 
 @media only screen and (max-height: 600px) {
-    body,html {
+
+    body,
+    html {
         height: auto;
     }
 }
 
 /* Mobile-specific adjustments for login form */
 @media (max-width: 570px) {
+
     /* Move the form up on mobile devices */
     .content-wrapper {
         align-items: flex-start;
-        padding-top: 0; /* Removed padding */
-        padding-bottom: 0; /* Removed padding */
+        padding-top: 0;
+        /* Removed padding */
+        padding-bottom: 0;
+        /* Removed padding */
     }
-    
+
     .container {
         margin-top: -20px;
         transform: translateY(0);
         width: 100%;
         padding: 0 15px;
     }
-    
+
     .box {
-        width: 100% !important; /* Changed from max-width: 400px to 100% */
-        max-width: none; /* Removed max-width constraint */
+        width: 100% !important;
+        /* Changed from max-width: 400px to 100% */
+        max-width: none;
+        /* Removed max-width constraint */
         margin: 0 auto;
     }
-    
+
     /* Adjust form elements for mobile */
     .top_text {
         padding: 0 10px;
         padding: 1.5rem 1rem;
     }
-    
+
     .css-sncgum {
         font-size: 2rem !important;
     }
-    
+
     .input-container {
         margin-bottom: 15px;
     }
-    
+
     .cont_btn {
         height: 50px;
         font-size: 16px;
     }
-    
+
     /* Adjust preloader for mobile */
     .preloader {
         background-size: cover;
         background-position: center;
     }
-    
+
     .progress-container {
         width: 90%;
         max-width: 300px;
@@ -997,30 +1026,32 @@ p img {
 /* Additional adjustments for smaller mobile devices */
 @media (max-width: 480px) {
     .content-wrapper {
-        padding-top: 0; /* Removed padding */
+        padding-top: 0;
+        /* Removed padding */
     }
-    
+
     .container {
         padding: 0 10px;
     }
-    
+
     .box {
         padding: 15px;
     }
-    
+
     .css-sncgum {
         font-size: 2rem !important;
     }
-    
+
     .cont_btn {
         height: 45px;
         font-size: 14px;
     }
-    
-    .input-field, .password-input {
+
+    .input-field,
+    .password-input {
         font-size: 14px;
     }
-    
+
     label {
         font-size: 12px;
     }

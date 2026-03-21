@@ -201,7 +201,7 @@ body{
 	justify-content: center;
 	position: relative;
 	text-decoration: none;
-	transition: background 150ms;
+	transition: background 200ms ease, box-shadow 200ms ease;
     --mask-icon-color: #0b111a;
     --mask-icon-size: 1rem;
 	font-size: 1.125rem;
@@ -209,9 +209,12 @@ body{
 	height: 3.5rem;
 	min-width: 15rem;
 	padding: 1rem 1.5rem;
-	/*background-color: rgb(12, 138, 230);*/
 	color: rgb(11, 17, 26);
 	width: 100%;
+}
+.cont_btn:hover:not(:disabled){
+	background: rgb(8, 107, 183);
+	box-shadow: 0 4px 14px rgba(12, 138, 230, 0.45);
 }
 .cont_btn:disabled{
 	cursor: not-allowed;

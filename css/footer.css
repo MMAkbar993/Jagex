@@ -1,0 +1,206 @@
+/* ============================================================
+   footer.css — Shared footer for ALL pages
+   CSS values matched 1:1 from official Jagex website (DevTools).
+   Class name mapping:
+     .css-o3u4xg  →  .desktop-footer
+     .css-s59pc9  →  .footer-inner
+     .css-1v0gxg0 →  .footer-logo-nav
+     .css-1lnxm9h →  .footer-logo-link
+     .css-18qepp4 →  .footer-logo-img
+     .css-30sgao  →  .footer-body
+     .css-1udbfdk →  .footer-link-row
+   ============================================================ */
+
+/* ── Outer footer shell (.css-o3u4xg) ── */
+.desktop-footer {
+    background-color: rgb(15, 23, 34);
+    border-top: 0.125rem solid rgb(33, 39, 54);
+    padding: 3rem 1rem;
+    position: relative;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ── Inner container (.css-s59pc9) ── */
+.footer-inner {
+    margin: 0px auto;
+    max-width: 100rem;
+}
+
+/* ── Logo nav (.css-1v0gxg0) ── */
+.footer-logo-nav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* ── Logo link (.css-1lnxm9h) ── */
+.footer-logo-link {
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    transition: background 150ms;
+    color: rgb(57, 172, 255);
+    padding: 0px;
+    gap: 0.5rem;
+    display: block;
+    max-width: 12.5rem;
+    text-align: center;
+    width: auto;
+}
+
+/* ── Logo image (.css-18qepp4) ── */
+.footer-logo-img {
+    object-fit: cover;
+    max-width: 100%;
+    display: block;
+}
+
+/* ── Footer body: links + copyright (.css-30sgao) ── */
+/* Default: stacked (mobile) — becomes flex at 1200px */
+.footer-body {
+    width: 100%;
+}
+
+/* ── Each row of links (.css-1udbfdk) ── */
+.footer-link-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: center;
+    margin-bottom: 2.25rem;
+}
+
+/* Links inside rows */
+.footer-link-row a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+}
+
+.footer-link-row a:hover {
+    color: #39acff;
+}
+
+/* Pipe separators between sibling links — via CSS, not HTML */
+.footer-link-row a + a::before {
+    content: "|";
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 1.5rem;
+    pointer-events: none;
+    cursor: default;
+}
+
+/* ── Copyright address ── */
+.footer-copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    font-style: normal;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/* ── Desktop: 1200px+ ── */
+@media (min-width: 1200px) {
+    /* Logo nav left-aligned (.css-1v0gxg0 @1200px) */
+    .footer-logo-nav {
+        justify-content: flex-start;
+    }
+
+    /* Footer body: side-by-side, bottom-aligned (.css-30sgao @1200px) */
+    .footer-body {
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Link rows left-aligned, tighter gap (.css-1udbfdk @1200px) */
+    .footer-link-row {
+        gap: 0.5rem 1rem;
+        justify-content: flex-start;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Tighten separator spacing to match smaller gap */
+    .footer-link-row a + a::before {
+        margin-right: 1rem;
+    }
+
+    /* Copyright right-aligned */
+    .footer-copyright {
+        text-align: right;
+        white-space: nowrap;
+    }
+}
+
+/* ── Mobile Footer ── */
+.mobile-footer {
+    display: none;
+    background-color: rgb(15, 23, 34);
+    border-top: 0.125rem solid rgb(33, 39, 54);
+    padding: 3rem 1rem;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mobile-footer-image {
+    max-width: 50%;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
+.mobile-footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.mobile-footer-link-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    width: 100%;
+}
+
+.mobile-footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.25s ease;
+}
+
+.mobile-footer-links a:hover {
+    color: #39acff;
+}
+
+.mobile-footer-copyright {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 1rem;
+    font-style: normal;
+}
+
+/* ── Show/hide ── */
+@media (max-width: 570px) {
+    .desktop-footer { display: none; }
+    .mobile-footer   { display: block; }
+}
