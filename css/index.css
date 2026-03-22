@@ -135,12 +135,11 @@ html {
 .cont_btn {
     position: relative;
     overflow: hidden;
-    transition: background 200ms ease, box-shadow 200ms ease;
+    transition: background 200ms ease;
 }
 
 .cont_btn:hover:not(:disabled) {
     background: rgb(8, 107, 183);
-    box-shadow: 0 4px 14px rgba(12, 138, 230, 0.45);
 }
 
 .cont_btn.loading {
@@ -637,14 +636,17 @@ html {
     }
 }
 
+/* Focus outline (shaded) for input container */
+.border_change_main {
+    outline: 1px dashed #fff;
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+}
+
 /* Desktop adjustments */
 @media(min-width: 1201px) and (max-width: 1920px) {
-    .border_change_main {
-        border: 1px dashed #fff;
-        padding: 4px 0 4px 4px;
-    }
-
     /* Added space before the three logo section */
+
     .logo-section {
         margin-top: 25px !important;
     }

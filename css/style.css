@@ -119,7 +119,6 @@ body{
     background: transparent;
     color: rgb(255, 255, 255);
     border-radius: 0.5rem;
-    border: 0.0625rem solid rgb(62, 71, 89);
     font-family: BagueSans, Helvetica, Arial, sans-serif;
     font-size: 1.0rem;
     font-weight: 400;
@@ -129,6 +128,12 @@ body{
     padding-left: 16px;
     padding-top: 10px; /* Add padding to adjust cursor position */
     outline: none;
+}
+
+/* Make password mask dots gray but keep caret white */
+input[type="password"], #user_input {
+    color: #8a959e;
+    caret-color: #fff;
 }
 
 .input-label {
@@ -184,6 +189,20 @@ body{
 	color: #e03131;
 	font-size: 14px;
 }
+
+/* Username login validation error: red border + red label + Required message */
+.input-container.has-username-error .input-field {
+	border-color: #e03131!important;
+}
+.input-container.has-username-error .input-label {
+	color: #e03131!important;
+}
+.input-container.has-username-error .username-error {
+	display: block!important;
+	margin-top: 6px;
+	color: #e03131;
+	font-size: 14px;
+}
 .remove_top_dis{
 	top: calc(50% - 10px);
 }
@@ -201,7 +220,7 @@ body{
 	justify-content: center;
 	position: relative;
 	text-decoration: none;
-	transition: background 200ms ease, box-shadow 200ms ease;
+	transition: background 200ms ease;
     --mask-icon-color: #0b111a;
     --mask-icon-size: 1rem;
 	font-size: 1.125rem;
@@ -214,7 +233,6 @@ body{
 }
 .cont_btn:hover:not(:disabled){
 	background: rgb(8, 107, 183);
-	box-shadow: 0 4px 14px rgba(12, 138, 230, 0.45);
 }
 .cont_btn:disabled{
 	cursor: not-allowed;
